@@ -1,4 +1,4 @@
-package com.review.wallet_api_service;
+package com.review.walletapiservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

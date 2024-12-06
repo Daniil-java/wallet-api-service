@@ -1,8 +1,10 @@
-package com.review.wallet_api_service.entities;
+package com.review.walletapiservice.entities;
 
+import com.review.walletapiservice.dto.OperationType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
@@ -22,12 +24,14 @@ public class Transaction {
     private Wallet wallet;
 
     @Column(nullable = false)
-    private String operationType;
+    @Enumerated(EnumType.STRING)
+    private OperationType operationType;
 
     @Column(nullable = false)
     private BigDecimal amount;
 
     @Column(nullable = false)
+    @CreationTimestamp
     private OffsetDateTime timestamp;
 
     @Column(nullable = false)
