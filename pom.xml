@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.review</groupId>
 	<artifactId>wallet-api-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>wallet-api-service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
