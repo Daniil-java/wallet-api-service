@@ -1,8 +1,9 @@
-package com.review.wallet_api_service.entities;
+package com.review.walletapiservice.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
@@ -15,7 +16,7 @@ import java.util.UUID;
 @Accessors(chain = true)
 public class Wallet {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID walletId;
 
     @Column(nullable = false)
@@ -26,5 +27,6 @@ public class Wallet {
     private OffsetDateTime updated;
 
     @Column(nullable = false, updatable = false)
+    @CreationTimestamp
     private OffsetDateTime created;
 }

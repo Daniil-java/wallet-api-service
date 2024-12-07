@@ -1,4 +1,4 @@
-package com.review.wallet_api_service;
+package com.review.walletapiservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
