@@ -21,6 +21,6 @@ public class WithdrawOperation implements WalletOperation {
 
     @Override
     public OperationType getOperationType() {
-        return OperationType.DEPOSIT;
+        return OperationType.WITHDRAW;
     }
 }

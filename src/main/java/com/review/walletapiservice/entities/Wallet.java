@@ -16,7 +16,7 @@ import java.util.UUID;
 @Accessors(chain = true)
 public class Wallet {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID walletId;
 
     @Column(nullable = false)

@@ -16,11 +16,11 @@ import java.util.UUID;
 @Accessors(chain = true)
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID transactionId;
 
     @ManyToOne
-    @JoinColumn(name = "walletId", nullable = false)
+    @JoinColumn(name = "wallet_id", nullable = false)
     private Wallet wallet;
 
     @Column(nullable = false)

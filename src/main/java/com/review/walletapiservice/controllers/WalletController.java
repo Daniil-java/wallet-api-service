@@ -77,7 +77,7 @@ public class WalletController {
                     )
             }
     )
-    @PostMapping
+    @PostMapping("/create")
     public WalletResponse createWallet() {
         return walletService.createWallet();
     }
