@@ -24,18 +24,14 @@ public class Transaction {
     @JoinColumn(name = "wallet_id", nullable = false)
     private Wallet wallet;
 
-    @Column
     @Enumerated(EnumType.STRING)
     private OperationType operationType;
 
-    @Column
     private BigDecimal amount;
 
-    @Column
     @CreationTimestamp
     private OffsetDateTime created;
 
-    @Column
     @Enumerated(EnumType.STRING)
     private TransactionStatus status;
 

@@ -30,8 +30,9 @@ services:
       timeout: 1s
       retries: 2
 
-  cache:
-    image: redis:7.4.1
+  redisson:
+    image: redis
+    domainname: redisson
     restart: always
     ports:
       - '6379:6379'

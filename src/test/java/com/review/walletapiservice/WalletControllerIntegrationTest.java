@@ -57,7 +57,6 @@ public class WalletControllerIntegrationTest {
     }
 
     @Test
-    @Transactional
     @DisplayName("Тест проверяет корректность получения данных кошелька")
     public void testGetBalance() throws Exception {
         Wallet wallet = new Wallet()

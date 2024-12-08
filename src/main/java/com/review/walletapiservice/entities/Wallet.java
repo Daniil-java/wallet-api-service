@@ -19,14 +19,11 @@ public class Wallet {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID walletId;
 
-    @Column
     private BigDecimal balance;
 
-    @Column
     @UpdateTimestamp
     private OffsetDateTime updated;
 
-    @Column
     @CreationTimestamp
     private OffsetDateTime created;
 }
