@@ -19,14 +19,14 @@ public class Wallet {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID walletId;
 
-    @Column(nullable = false)
+    @Column
     private BigDecimal balance;
 
-    @Column(nullable = false)
+    @Column
     @UpdateTimestamp
     private OffsetDateTime updated;
 
-    @Column(nullable = false, updatable = false)
+    @Column
     @CreationTimestamp
     private OffsetDateTime created;
 }

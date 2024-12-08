@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 
-public interface WalletOperation {
+public interface WalletOperationProcessor {
     BigDecimal apply(BigDecimal balance, BigDecimal amount);
     OperationType getOperationType();
 
     @Autowired
-    default void registerMyself(WalletOperationHandler walletOperationHandler) {
-        walletOperationHandler.register(getOperationType(), this);
+    default void registerMyself(WalletOperationProcessorHandler walletOperationProcessorHandler) {
+        walletOperationProcessorHandler.register(getOperationType(), this);
     }
 }

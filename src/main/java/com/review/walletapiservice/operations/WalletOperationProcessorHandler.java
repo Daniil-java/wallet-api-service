@@ -9,15 +9,15 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class WalletOperationHandler {
-    private final Map<OperationType, WalletOperation> operationMap = new ConcurrentHashMap<>();
+public class WalletOperationProcessorHandler {
+    private final Map<OperationType, WalletOperationProcessor> operationMap = new ConcurrentHashMap<>();
 
-    public void register(OperationType operationType, WalletOperation walletOperation) {
-        operationMap.put(operationType, walletOperation);
+    public void register(OperationType operationType, WalletOperationProcessor walletOperationProcessor) {
+        operationMap.put(operationType, walletOperationProcessor);
     }
 
-    public WalletOperation getOperation(OperationType type) {
-        WalletOperation operation = operationMap.get(type);
+    public WalletOperationProcessor getOperation(OperationType type) {
+        WalletOperationProcessor operation = operationMap.get(type);
         if (operation == null) {
             throw new ErrorResponseException(ErrorStatus.WALLET_INCORRECT_OPERATION);
         }
