@@ -1,6 +1,7 @@
 package com.review.walletapiservice.entities;
 
 import com.review.walletapiservice.dto.OperationType;
+import com.review.walletapiservice.dto.TransactionStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -23,19 +24,16 @@ public class Transaction {
     @JoinColumn(name = "wallet_id", nullable = false)
     private Wallet wallet;
 
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private OperationType operationType;
 
-    @Column(nullable = false)
     private BigDecimal amount;
 
-    @Column(nullable = false)
     @CreationTimestamp
-    private OffsetDateTime timestamp;
+    private OffsetDateTime created;
 
-    @Column(nullable = false)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private TransactionStatus status;
 
     private String errorMessage;
 }

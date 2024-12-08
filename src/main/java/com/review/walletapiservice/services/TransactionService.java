@@ -1,5 +1,6 @@
 package com.review.walletapiservice.services;
 
+import com.review.walletapiservice.dto.TransactionStatus;
 import com.review.walletapiservice.dto.WalletOperationRequest;
 import com.review.walletapiservice.entities.Transaction;
 import com.review.walletapiservice.entities.Wallet;
@@ -20,11 +21,8 @@ public class TransactionService {
                         .setWallet(wallet)
                         .setOperationType(walletOperationRequest.getOperationType())
                         .setAmount(walletOperationRequest.getAmount())
+                        .setStatus(errorMessage == null ? TransactionStatus.SUCCESS : TransactionStatus.DENIED)
                         .setErrorMessage(errorMessage)
         );
-    }
-
-    public void save(Wallet wallet, WalletOperationRequest walletOperationRequest) {
-        save(wallet, walletOperationRequest, null);
     }
 }

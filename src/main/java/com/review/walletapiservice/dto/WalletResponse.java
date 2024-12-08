@@ -20,6 +20,7 @@ public class WalletResponse {
     private BigDecimal balance;
 
     public static WalletResponse convert(Wallet wallet) {
+        if (wallet == null) return null;
         return new WalletResponse()
                 .setBalance(wallet.getBalance())
                 .setWalletId(wallet.getWalletId());
